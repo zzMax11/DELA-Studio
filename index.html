@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#550000">
+  <meta name="description" content="DELA Studio — Diseño gráfico e identidad visual para marcas con intención.">
+  <title>DELA Studio | Diseño con intención</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --wine: #550000;
+      --cream: #FDFBD4;
+      --ink: #281919;
+      --muted: #796969;
+      --line: rgba(85, 0, 0, .18);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+
+    .announcement {
+      padding: 10px;
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: 9px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(253,251,212,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      max-width: 1160px;
+      padding: 17px 24px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--wine);
+      line-height: 1;
+    }
+
+    .logo strong {
+      font: 400 30px var(--serif);
+      letter-spacing: .13em;
+    }
+
+    .logo span {
+      font-size: 8px;
+      letter-spacing: .5em;
+      margin-top: 7px;
+      padding-left: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 12px;
+    }
+
+    .nav-links a:hover { opacity: .65; }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 21px;
+      background: var(--wine);
+      color: var(--cream);
+      border: 1px solid var(--wine);
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-size: 10px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--wine);
+      transform: translateY(-2px);
+    }
+
+    .button.light {
+      background: var(--cream);
+      color: var(--wine);
+      border-color: var(--cream);
+    }
+
+    .button.light:hover {
+      background: transparent;
+      color: var(--cream);
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--wine);
+      border: 0;
+      background: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: var(--wine);
+      color: var(--cream);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1160px;
+      margin: auto;
+      padding: 90px 24px;
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow, .kicker {
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 9px;
+    }
+
+    .eyebrow { opacity: .75; margin-bottom: 24px; }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+
+    h1 {
+      font-size: clamp(48px, 6vw, 80px);
+      letter-spacing: -.045em;
+      line-height: 1.04;
+      margin: 0 0 25px;
+    }
+
+    h1 em { font-weight: 400; }
+
+    .hero-copy {
+      max-width: 460px;
+      font-size: 13px;
+      line-height: 1.95;
+      color: rgba(253,251,212,.78);
+      margin-bottom: 30px;
+    }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .slogan {
+      margin-top: 28px;
+      font: italic 16px var(--serif);
+      opacity: .8;
+    }
+
+    .hero-art {
+      max-width: 380px;
+      width: 100%;
+      aspect-ratio: .8;
+      justify-self: center;
+      padding: 13px;
+      border: 1px solid rgba(253,251,212,.55);
+      transform: rotate(2deg);
+    }
+
+    .art-inner {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+      color: var(--wine);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-inner::before, .art-inner::after {
+      content: "";
+      position: absolute;
+      width: 245px;
+      height: 245px;
+      border: 1px solid rgba(85,0,0,.22);
+      border-radius: 50%;
+    }
+
+    .art-inner::after { width: 195px; height: 195px; }
+
+    .art-top, .art-bottom {
+      position: absolute;
+      font-size: 8px;
+      letter-spacing: .2em;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .art-top { top: 22px; }
+    .art-bottom { bottom: 22px; }
+
+    .art-name {
+      z-index: 1;
+      font: 400 clamp(45px, 5vw, 65px) var(--serif);
+      letter-spacing: .13em;
+    }
+
+    .art-studio {
+      z-index: 1;
+      font-size: 8px;
+      letter-spacing: .5em;
+      margin-top: 8px;
+    }
+
+    section.content {
+      padding: 100px 24px;
+    }
+
+    .container { max-width: 1160px; margin: auto; }
+
+    .kicker { color: var(--wine); margin-bottom: 18px; }
+
+    h2 {
+      font-size: clamp(38px, 4.5vw, 57px);
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      margin: 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .intro {
+      max-width: 390px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+      margin-bottom: 3px;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project-art {
+      aspect-ratio: .83;
+      padding: 13px;
+    }
+
+    .mockup {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mockup .seal {
+      border: 1px solid currentColor;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font: italic 23px var(--serif);
+      margin-bottom: 25px;
+    }
+
+    .mockup h3 {
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1;
+      margin: 0 0 12px;
+    }
+
+    .mockup p {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: .17em;
+      line-height: 1.8;
+    }
+
+    .project:nth-child(1) .project-art { background: #d8c6a6; }
+    .project:nth-child(1) .mockup { background: #f5ecd8; color: #583b2a; }
+    .project:nth-child(2) .project-art { background: #b5a298; }
+    .project:nth-child(2) .mockup { background: #30231f; color: #fdf1dc; }
+    .project:nth-child(3) .project-art { background: #ddc5c2; }
+    .project:nth-child(3) .mockup { background: var(--wine); color: var(--cream); }
+
+    .project-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 10px;
+      padding: 17px 2px;
+    }
+
+    .project-info h3 { font-size: 22px; margin: 0 0 5px; }
+    .project-info p { color: var(--muted); font-size: 10px; margin: 0; }
+
+    .tag {
+      border: 1px solid var(--line);
+      color: var(--wine);
+      padding: 5px 7px;
+      font-size: 8px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .services { background: #f5f0c9; }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--line);
+    }
+
+    .service {
+      padding: 30px 25px 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .service:nth-child(even) {
+      padding-left: 25px;
+      border-left: 1px solid var(--line);
+    }
+
+    .service-num {
+      color: var(--wine);
+      opacity: .7;
+      font-size: 9px;
+      letter-spacing: .18em;
+    }
+
+    .service h3 { font-size: 29px; margin: 18px 0 10px; }
+    .service p { color: var(--muted); font-size: 12px; line-height: 1.9; max-width: 420px; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 45px;
+    }
+
+    .step { border-top: 1px solid var(--wine); padding-top: 17px; }
+    .step-number { font: 32px var(--serif); color: var(--wine); }
+    .step h3 { font-size: 22px; margin: 17px 0 9px; }
+    .step p { color: var(--muted); font-size: 12px; line-height: 1.8; }
+
+    .contact {
+      background: var(--wine);
+      color: var(--cream);
+    }
+
+    .contact .kicker { color: var(--cream); opacity: .7; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+    .contact-copy > p {
+      max-width: 400px;
+      color: rgba(253,251,212,.75);
+      font-size: 12px;
+      line-height: 1.95;
+      margin-top: 22px;
+    }
+
+    .contact-label {
+      margin-top: 35px;
+      border-top: 1px solid rgba(253,251,212,.3);
+      padding-top: 18px;
+      font-size: 9px;
+      letter-spacing: .15em;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 14px;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      opacity: .85;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 12px;
+      background: transparent;
+      border: 1px solid rgba(253,251,212,.35);
+      border-radius: 0;
+      color: var(--cream);
+      font-size: 12px;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--cream);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(253,251,212,.48);
+    }
+
+    select option { background: var(--cream); color: var(--ink); }
+    textarea { min-height: 110px; resize: vertical; }
+
+    form .button { grid-column: 1 / -1; }
+
+    .note {
+      grid-column: 1 / -1;
+      font-size: 10px;
+      line-height: 1.7;
+      color: rgba(253,251,212,.65);
+      margin: -5px 0 0;
+    }
+
+    footer { padding: 28px 24px; }
+    .footer-inner {
+      max-width: 1160px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-slogan { font: italic 15px var(--serif); color: var(--wine); }
+    .copyright { font-size: 9px; color: var(--muted); }
+
+    .whatsapp-float {
+      position: fixed;
+      z-index: 20;
+      right: 20px;
+      bottom: 20px;
+      background: var(--wine);
+      color: var(--cream);
+      padding: 16px 19px;
+      border: 1px solid var(--cream);
+      box-shadow: 0 6px 22px rgba(40,0,0,.18);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      nav { padding: 14px 18px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 22px;
+        background: var(--cream);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+      }
+      .nav-links.open { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; padding: 65px 22px; gap: 40px; }
+      .hero-art { max-width: 310px; }
+      section.content { padding: 72px 20px; }
+      .section-head { display: block; }
+      .intro { margin-top: 20px; }
+      .portfolio { grid-template-columns: 1fr 1fr; gap: 20px 12px; }
+      .project:last-child { grid-column: 1 / -1; max-width: calc(50% - 6px); }
+      .service-grid { grid-template-columns: 1fr; }
+      .service, .service:nth-child(even) { padding: 25px 0; border-left: 0; }
+      .steps { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 440px) {
+      h1 { font-size: 47px; }
+      .portfolio { grid-template-columns: 1fr; }
+      .project:last-child { max-width: none; }
+      .project-art { aspect-ratio: .95; }
+      form { grid-template-columns: 1fr; }
+      .full, form .button, .note { grid-column: auto; }
+      .whatsapp-float { right: 12px; bottom: 12px; }
+    }
+
+
+    /* SEPARADOR VISUAL ENTRE PROCESO Y PRECIOS */
+    .chapter-break {
+      background: var(--wine);
+      color: var(--cream);
+      padding: 30px 24px;
+      border-top: 1px solid rgba(253,251,212,.22);
+      border-bottom: 1px solid rgba(253,251,212,.22);
+    }
+
+    .chapter-break-inner {
+      max-width: 1160px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .chapter-label {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 9px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .chapter-label::before {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 1px;
+      background: var(--cream);
+      opacity: .75;
+    }
+
+    .chapter-caption {
+      margin: 0;
+      font: italic 20px var(--serif);
+      opacity: .9;
+    }
+
+    @media (max-width: 600px) {
+      .chapter-break { padding: 25px 20px; }
+      .chapter-break-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .chapter-caption { font-size: 18px; }
+    }
+
+    /* CATÁLOGO DE PRECIOS */
+    .catalog { background: var(--cream); }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 42px;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      min-height: 260px;
+      padding: 23px 19px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .16);
+      transition: transform .2s, background .2s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, .48);
+    }
+
+    .price-number {
+      color: var(--wine);
+      font-size: 9px;
+      letter-spacing: .18em;
+      margin-bottom: 27px;
+    }
+
+    .price-card h3 {
+      font-size: 23px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    .price-description {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+      margin: 0 0 22px;
+    }
+
+    .price {
+      color: var(--wine);
+      font-family: var(--serif);
+      font-size: 25px;
+      margin-top: auto;
+      margin-bottom: 17px;
+    }
+
+    .price-card .button {
+      width: 100%;
+      padding: 12px 8px;
+      font-size: 9px;
+    }
+
+    .catalog-note {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 1000px) {
+      .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 440px) {
+      .catalog-grid { grid-template-columns: 1fr; }
+      .price-card { min-height: 220px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement"></div>
+
+  <header>
+    <nav>
+      <a href="#inicio" class="logo" aria-label="DELA Studio inicio">
+        <strong>DELA</strong>
+        <span>STUDIO</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#portafolio">Portafolio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#proceso">Proceso</a>
+        <a class="button" href="#contacto">Hablemos ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Estudio independiente de diseño gráfico</p>
+          <h1>Tu marca merece una identidad <em>inolvidable.</em></h1>
+          <p class="hero-copy">
+            Creamos piezas visuales e identidades para negocios
+            que quieren comunicar mejor, conectar con sus clientes y destacar
+            con personalidad e innovacion.
+          </p>
+          <div class="actions">
+            <a class="button light" href="#contacto">Cuéntame tu proyecto ↗</a>
+            <a class="button" href="#portafolio">Explorar trabajos</a>
+          </div>
+          <p class="slogan">Take your brand to the next level.</p>
+        </div>
+
+        <div class="hero-art">
+          <div class="art-inner">
+            <div class="art-top">ESTUDIO CREATIVO · 2026</div>
+            <div class="art-name">DELA</div>
+            <div class="art-studio">STUDIO</div>
+            <div class="art-bottom">TAKE YOUR BRAND TO THE NEXT LEVEL</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="portafolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Una selección conceptual</p>
+            <h2>Ideas que toman<br>forma.</h2>
+          </div>
+          
+        </div>
+
+        <div class="portfolio">
+          <article class="project">
+            <div class="project-art">
+              <div class="mockup">
+                <div class="seal">B</div>
+                <h3>Bruma<br>Café</h3>
+                <p>Café de origen · Identidad conceptual</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <div><h3>Bruma Café</h3><p>Identidad visual · Packaging</p></div>
+              <span class="tag">Concepto</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-art">
+              <div class="mockup">
+                <div class="seal">BN</div>
+                <h3>Brasa<br>Negra</h3>
+                <p>Tradición con carácter</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <div><h3>Brasa Negra</h3><p>Campaña gastronómica</p></div>
+              <span class="tag">Concepto</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-art">
+              <div class="mockup">
+                <div class="seal">M.</div>
+                <h3>Maison<br>Amara</h3>
+                <p>Una belleza esencial</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <div><h3>Maison Amara</h3><p>Dirección visual · Moda</p></div>
+              <span class="tag">Concepto</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Qué podemos crear</p>
+            <h2>Servicios pensados<br>para tu marca.</h2>
+          </div>
+        
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <span class="service-num">01 / REDES SOCIALES</span>
+            <h3>Diseño para redes</h3>
+            <p>Publicaciones, carruseles y piezas visuales que mantienen la coherencia de tu marca.</p>
+          </article>
+          <article class="service">
+            <span class="service-num">02 / COMUNICACIÓN</span>
+            <h3>Flyers y publicidad</h3>
+            <p>Piezas promocionales para lanzamientos, eventos, ofertas y campañas de tu negocio.</p>
+          </article>
+          <article class="service">
+            <span class="service-num">03 / IDENTIDAD</span>
+            <h3>Logotipo e identidad visual</h3>
+            <p>Un sistema visual inicial con logotipo, colores y tipografías para dar dirección a tu marca.</p>
+          </article>
+          <article class="service">
+            <span class="service-num">04 / A MEDIDA</span>
+            <h3>Diseño personalizado</h3>
+            <p>¿Tienes otra idea? Cuéntame el objetivo y revisaremos qué solución visual necesitas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="proceso">
+      <div class="container">
+        <p class="kicker">Simple, claro y colaborativo</p>
+        <h2>De la idea a la entrega.</h2>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-number">01</span>
+            <h3>Nos conocemos</h3>
+            <p>Me cuentas sobre tu marca, tus objetivos y qué necesitas diseñar.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">02</span>
+            <h3>Definimos</h3>
+            <p>Recibes una propuesta con alcance, precio, revisiones y fecha estimada.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">03</span>
+            <h3>Diseñamos</h3>
+            <p>Desarrollo la propuesta visual y trabajamos las revisiones acordadas.</p>
+          </article>
+          <article class="step">
+            <span class="step-number">04</span>
+            <h3>Entregamos</h3>
+            <p>Recibes los archivos finales que acordamos para tu proyecto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+      
+    <div class="chapter-break" aria-label="Inicio de la sección de precios">
+      <div class="chapter-break-inner">
+        <div class="chapter-label"> Inversión</div>
+        <p class="chapter-caption">Transparencia desde el primer paso.</p>
+      </div>
+    </div>
+
+    <section class="content catalog" id="precios">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <p class="kicker">Inversión inicial</p>
+            <h2>Diseño con intención.<br>Precios claros.</h2>
+          </div>
+
+        </div>
+
+        <div class="catalog-grid">
+
+          <article class="price-card">
+            <span class="price-number">01 / REDES SOCIALES</span>
+            <h3>Post sencillo</h3>
+            <p class="price-description">
+              Una pieza gráfica limpia para comunicar una idea, novedad o mensaje.
+            </p>
+            <div class="price">S/ 15</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">02 / PUBLICIDAD</span>
+            <h3>Post publicitario elaborado</h3>
+            <p class="price-description">
+              Una composición más trabajada para destacar productos, promociones o campañas.
+            </p>
+            <div class="price">S/ 25</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">03 / STORIES</span>
+            <h3>Historia para Instagram</h3>
+            <p class="price-description">
+              Diseño vertical para anunciar novedades, ofertas o comunicar con tus seguidores.
+            </p>
+            <div class="price">S/ 10–15</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">04 / PROMOCIÓN</span>
+            <h3>Flyer promocional</h3>
+            <p class="price-description">
+              Una pieza visual para promocionar productos, eventos o servicios.
+            </p>
+            <div class="price">S/ 25–35</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">05 / COMUNICACIÓN</span>
+            <h3>Banner para redes</h3>
+            <p class="price-description">
+              Diseño horizontal o adaptado al formato que necesite tu marca.
+            </p>
+            <div class="price">S/ 30–45</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">06 / PACK</span>
+            <h3>Pack de 3 posts</h3>
+            <p class="price-description">
+              Tres publicaciones con una línea visual coherente para tu negocio.
+            </p>
+            <div class="price">S/ 50–60</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">07 / PACK</span>
+            <h3>Pack de 5 posts</h3>
+            <p class="price-description">
+              Cinco piezas coordinadas para mantener una presencia visual consistente.
+            </p>
+            <div class="price">S/ 75–100</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+          <article class="price-card">
+            <span class="price-number">08 / IDENTIDAD</span>
+            <h3>Logo sencillo</h3>
+            <p class="price-description">
+              Una propuesta de logotipo básico para comenzar a construir tu identidad.
+            </p>
+            <div class="price">S/ 40–70</div>
+            <a class="button" href="#contacto">Lo quiero ↗</a>
+          </article>
+
+        </div>
+
+        <p class="catalog-note">
+          Los precios son referenciales e iniciales. El costo final dependerá
+          del alcance, la complejidad y los entregables acordados para cada proyecto.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="content contact" id="contacto">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <p class="kicker">El siguiente paso empieza aquí</p>
+          <h2>Hablemos de lo que imaginas.</h2>
+          <p>
+            Cuéntame un poco sobre tu proyecto. Completa el formulario y se
+            abrirá WhatsApp con tu solicitud lista para enviar. Así podremos
+            conversar sobre tus ideas y preparar una cotización.
+          </p>
+          <div class="contact-label">· DELA STUDIO ·</div>
+        </div>
+
+        <form id="projectForm">
+          <div class="field">
+            <label for="name">Tu nombre *</label>
+            <input id="name" name="name" placeholder="¿Cómo te llamas?" required>
+          </div>
+
+          <div class="field">
+            <label for="business">Nombre del negocio</label>
+            <input id="business" name="business" placeholder="Tu marca o negocio">
+          </div>
+
+          <div class="field">
+            <label for="service">¿Qué necesitas? *</label>
+            <select id="service" name="service" required>
+              <option value="">Selecciona un servicio</option>
+              <option>Diseño para redes sociales</option>
+              <option>Flyer o publicidad</option>
+              <option>Logotipo e identidad visual</option>
+              <option>Diseño personalizado</option>
+              <option>Quiero orientación</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="budget">Presupuesto aproximado</label>
+            <select id="budget" name="budget">
+              <option>Prefiero conversarlo</option>
+              <option>S/ 15–50</option>
+              <option>S/ 50–100</option>
+              <option>S/ 100–200</option>
+              <option>Más de S/ 200</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="deadline">¿Para cuándo lo necesitas?</label>
+            <select id="deadline" name="deadline">
+              <option>Sin fecha definida</option>
+              <option>Lo antes posible</option>
+              <option>En una semana</option>
+              <option>En dos semanas o más</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="details">Cuéntame sobre tu proyecto *</label>
+            <textarea id="details" name="details" placeholder="¿Qué quieres diseñar? ¿Cuál es el objetivo?" required></textarea>
+          </div>
+
+          <button class="button light full" type="submit">
+            Enviar solicitud por WhatsApp ↗
+          </button>
+          <p class="note">
+            WhatsApp se abrirá con la información que ingresaste. Podrás revisar
+            y enviar el mensaje tú mismo.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="#inicio" class="logo">
+        <strong>DELA</strong>
+        <span>STUDIO</span>
+      </a>
+      <p class="footer-slogan">Take your brand to the next level.</p>
+      <p class="copyright">© <span id="year"></span> DELA Studio.</p>
+    </div>
+  </footer>
+
+  <a href="#contacto" class="whatsapp-float" id="floatingWA">WhatsApp ↗</a>
+
+  <script>
+    // CONFIGURACIÓN:
+    // Reemplaza TU_NUMERO_AQUI por tu número real.
+    // Para Perú, escribe 51 seguido del número, solo dígitos.
+    // Ejemplo ficticio: "51987654321"
+    const WHATSAPP_NUMBER = "51950144665";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("open");
+      menuToggle.textContent = open ? "×" : "☰";
+      menuToggle.setAttribute("aria-expanded", String(open));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.textContent = "☰";
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function openWhatsApp(message) {
+      if (!/^\d{10,15}$/.test(WHATSAPP_NUMBER)) {
+        alert(
+          "Configura tu número de WhatsApp en el código. Busca WHATSAPP_NUMBER y reemplaza TU_NUMERO_AQUI por tu número con código de país, solo dígitos."
+        );
+        return;
+      }
+
+      const url =
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    document.getElementById("projectForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const data = new FormData(event.currentTarget);
+
+      const name = data.get("name").trim();
+      const business = data.get("business").trim() || "No especificado";
+      const service = data.get("service");
+      const budget = data.get("budget");
+      const deadline = data.get("deadline");
+      const details = data.get("details").trim();
+
+      const message = [
+        "Hola, DELA Studio. Quiero solicitar información para un proyecto.",
+        "",
+        "*Nombre:* " + name,
+        "*Negocio:* " + business,
+        "*Servicio:* " + service,
+        "*Presupuesto:* " + budget,
+        "*Plazo:* " + deadline,
+        "*Detalles:* " + details,
+        "",
+        "¡Gracias!"
+      ].join("\n");
+
+      openWhatsApp(message);
+    });
+
+    document.getElementById("floatingWA").addEventListener("click", event => {
+      event.preventDefault();
+      openWhatsApp(
+        "Hola, DELA Studio. Quisiera información sobre sus servicios de diseño gráfico."
+      );
+    });
+  </script>
+</body>
+</html>
