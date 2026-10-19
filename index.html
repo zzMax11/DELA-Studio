@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -659,6 +658,13 @@
       .catalog-grid { grid-template-columns: 1fr; }
       .price-card { min-height: 220px; }
     }
+
+    .project-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -726,11 +732,11 @@
         <div class="portfolio">
           <article class="project">
             <div class="project-art">
-              <div class="mockup">
-                <div class="seal">B</div>
-                <h3>Bruma<br>Café</h3>
-                <p>Café de origen · Identidad conceptual</p>
-              </div>
+              <img
+                class="project-image"
+                src="images/bruma-cafe.png"
+                alt="Identidad visual de Bruma Café"
+              >
             </div>
             <div class="project-info">
               <div><h3>Bruma Café</h3><p>Identidad visual · Packaging</p></div>
@@ -740,11 +746,11 @@
 
           <article class="project">
             <div class="project-art">
-              <div class="mockup">
-                <div class="seal">BN</div>
-                <h3>Brasa<br>Negra</h3>
-                <p>Tradición con carácter</p>
-              </div>
+              <img
+                class="project-image"
+                src="images/brasa-negra.png"
+                alt="Identidad visual de Brasa Negra"
+              >
             </div>
             <div class="project-info">
               <div><h3>Brasa Negra</h3><p>Campaña gastronómica</p></div>
@@ -754,11 +760,11 @@
 
           <article class="project">
             <div class="project-art">
-              <div class="mockup">
-                <div class="seal">M.</div>
-                <h3>Maison<br>Amara</h3>
-                <p>Una belleza esencial</p>
-              </div>
+              <img
+                class="project-image"
+                src="images/maison-amara.png"
+                alt="Identidad visual de Maison Amara"
+              >
             </div>
             <div class="project-info">
               <div><h3>Maison Amara</h3><p>Dirección visual · Moda</p></div>
